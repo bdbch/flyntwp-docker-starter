@@ -1,7 +1,7 @@
 FROM node:14 as node
 
-COPY wp-content /wp-content
-WORKDIR /wp-content/themes/flynt
+COPY /wp-content/themes/flynt /theme
+WORKDIR /theme
 
 RUN apt install python -y
 
