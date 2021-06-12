@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: docker/wordpress/Dockerfile
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: flyntuser
+      WORDPRESS_DB_PASSWORD: flyntpassword
+      WORDPRESS_DB_NAME: flyntdev
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+
+  builder:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./wp-content/themes:/wp-content/themes
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: flyntdev
+      MYSQL_USER: flyntuser
+      MYSQL_PASSWORD: flyntpassword
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - ./db:/var/lib/mysql

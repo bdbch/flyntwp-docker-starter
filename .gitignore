@@ -1,0 +1,10 @@
+db
+
+wp-content/uploads
+wp-content/upgrade
+wp-content/languages
+
+wp-content/plugins/advanced-custom-fields-pro
+
+wp-content/themes/*
+!wp-content/themes/flynt/
