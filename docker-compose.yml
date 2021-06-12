@@ -18,13 +18,20 @@ services:
     volumes:
       - ./wp-content:/var/www/html/wp-content
 
-  builder:
+  node:
     build:
       context: .
       dockerfile: docker/node/Dockerfile
     restart: always
     ports:
       - 3000:3000
+    volumes:
+      - ./wp-content/themes/flynt:/theme
+
+  composer:
+    build:
+      context: .
+      dockerfile: docker/composer/Dockerfile
     volumes:
       - ./wp-content/themes/flynt:/theme
 
