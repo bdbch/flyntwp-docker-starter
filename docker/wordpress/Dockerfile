@@ -1,4 +1,4 @@
-FROM wordpress:5.7.2-apache as wordpress
+FROM --platform=linux/amd64 wordpress:5.7.2-apache as wordpress
 
 WORKDIR /var/www/html
 
