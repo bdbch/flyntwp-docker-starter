@@ -19,3 +19,7 @@ To make sure node_module are installed, run `docker-compose exec builder yarn in
 After setting up the project, the website should be available at `http://localhost`.
 
 Make sure to the start the bundler via `docker-compose exec builder yarn start`.
+
+## ACF Pro
+
+FlyntWP requires you to use ACF Pro. Make sure to download your ACF Pro plugin and put it into the `wp-content/plugins` folder.
