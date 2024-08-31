@@ -85,7 +85,7 @@
     "stylelint-scss": "^3.18.0",
     "swiper": "^6.3.3",
     "terser-webpack-plugin": "^4.2.3",
-    "webpack": "^4.44.2",
+    "webpack": "^5.94.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2"
   },
